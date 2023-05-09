@@ -1,0 +1,30 @@
+<div #element class="container">
+    <h1>Mon expertise</h1>
+
+    <div nz-row>
+        <div nz-col>
+            <nz-card
+                *ngFor="let item of items"
+                nzHoverable
+                style="width: 300px;"
+                [nzCover]="coverTemplate"
+                [nzActions]="[cardExpand]"
+                (click)="item.isExpended = !item.isExpended"
+                nz-tooltip
+                nzTooltipTitle="Plus d'informations"
+                nzTooltipPlacement="bottom">
+        
+                <nz-card-meta [nzTitle]="item.title" [nzDescription]="item.isExpended ? item.description : ''"></nz-card-meta>
+        
+                <ng-template #coverTemplate>
+                    <img [src]="item.image" />
+                </ng-template>
+        
+                <ng-template #cardExpand>
+                    <span nz-icon [nzType]="item.isExpended? 'up' : 'down'" nzTheme="outline"></span>
+                </ng-template>
+        
+            </nz-card>
+        </div>
+    </div>
+</div>
