@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, HostListener, QueryList, ViewChildren } from '@angular/core';
-import { ScrollService } from './scroll.service';
-import { ISection } from './section.model';
+import { ScrollService } from './services/scroll.service';
+import { ISection } from './models/section.model';
 
 @Component({
   selector: 'app-root',

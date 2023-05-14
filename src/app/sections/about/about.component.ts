@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ISection } from 'src/app/section.model';
+import { ISection } from 'src/app/models/section.model';
 
 @Component({
   selector: 'app-about',

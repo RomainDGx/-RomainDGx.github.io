@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ScrollService } from 'src/app/scroll.service';
-import { ISection } from 'src/app/section.model';
+import { ScrollService } from 'src/app/services/scroll.service';
+import { ISection } from 'src/app/models/section.model';
 
 @Component({
   selector: 'app-home',

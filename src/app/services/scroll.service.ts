@@ -1,7 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ISection } from './section.model';
+import { ISection } from '../models/section.model';
 
 @Injectable({
   providedIn: 'root'
