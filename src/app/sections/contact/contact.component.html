@@ -1,3 +1,61 @@
 <div #element class="container">
     <h1>Me contacter</h1>
+
+    <div nz-row>
+        <div nz-col nzSpan="12" id="content">
+            <div class="email">{{data.email}}</div>
+            <div class="links">
+                <a *ngFor="let link of data.links" [href]="link.url" target="_blank">
+                    <span nz-icon [nzType]="link.icon" nzTheme="outline" class="icon"></span>
+                    {{link.username}}
+                </a>
+            </div>
+        </div>
+        <div nz-col nzSpan="12">
+            <form nz-form [formGroup]="messageForm" (ngSubmit)="submitForm()">
+
+                <nz-form-item>
+                    <nz-form-label nzSpan="7" nzRequired>Prénom</nz-form-label>
+                    <nz-form-control nzSpan="12" nzHasFeedback [nzErrorTip]="emptyErrorTpl">
+                        <input nz-input formControlName="firstname" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label nzSpan="7" nzRequired>Nom</nz-form-label>
+                    <nz-form-control nzSpan="12" nzHasFeedback [nzErrorTip]="emptyErrorTpl">
+                        <input nz-input formControlName="lastname" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label nzSpan="7" nzRequired>Email</nz-form-label>
+                    <nz-form-control nzSpan="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+                        <input nz-input formControlName="email" />
+                        <ng-template #emailErrorTpl let-control>
+                            Veuillez rentrer un email valide.
+                        </ng-template>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label nzSpan="7" nzRequired>Message</nz-form-label>
+                    <nz-form-control nzSpan="12" nzHasFeedback [nzErrorTip]="emptyErrorTpl">
+                        <textarea nz-input formControlName="message" nz-row="2"></textarea>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzOffset="7" nzSpan="12">
+                        <button nz-button nzType="primary" [disabled]="messageForm.invalid" nzBlock [nzLoading]="isLoadingSubmit">Envoyer</button>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <ng-template #emptyErrorTpl let-control>
+                    Ce champ ne doit pas être vide.
+                </ng-template>
+
+            </form>
+        </div>
+    </div>
 </div>
