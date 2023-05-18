@@ -30,6 +30,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { ApiService, LocalApiService } from './services/api.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 registerLocaleData(fr);
 
@@ -40,7 +41,8 @@ registerLocaleData(fr);
     ExpertiseComponent,
     ProjectsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
