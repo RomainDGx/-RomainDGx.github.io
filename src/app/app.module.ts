@@ -32,6 +32,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { ApiService, LocalApiService } from './services/api.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListSplitterPipe } from './pipes/list-splitter.pipe';
+import { LayoutComponent } from './components/layout/layout.component';
 
 registerLocaleData(fr);
 
@@ -44,7 +45,8 @@ registerLocaleData(fr);
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    ListSplitterPipe
+    ListSplitterPipe,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
