@@ -2,15 +2,16 @@
     <h1>À propos de moi</h1>
 
     <div
-        nz-row
+    nz-row
         nzJustify="center"
-        [nzGutter]="[60, 60]"
         *ngFor="let row of elements | listSplitter:2"
         class="line"
     >
         <div
             nz-col
-            nzSpan="10"
+            nzXs="20"
+            nzSm="20"
+            nzMd="10"
             *ngFor="let col of row"
             class="element"
         >
