@@ -1,0 +1,52 @@
+<nz-layout>
+    <nz-header nzTheme="light">
+        <a class="name" (click)="scrollService.scrollTo(scrollService.sections[0])">
+            Romain Delorme-Glorieux
+        </a>
+        <ul nz-menu nzMode="horizontal" class="header-menu">
+            <li
+                nz-menu-item
+                *ngFor="let section of scrollService.sections"
+                (click)="scrollService.scrollTo(section)"
+                [nzSelected]="scrollService.currentSection === section"
+                fragment="section.anchor"
+                class="large-screen-menu"
+            >
+                {{section.label}}
+            </li>
+
+            <li
+                nz-submenu
+                nzIcon="menu"
+                nzSelected="false"
+                nzPlacement="bottomRight"
+                class="small-screen-menu"
+                [nzOpen]="isSubMenuOpen"
+                (click)="isSubMenuOpen = true"
+            >
+                <ul>
+                    <li
+                        nz-menu-item
+                        *ngFor="let section of scrollService.sections"
+                        (click)="scrollService.scrollTo(section)"
+                        [nzSelected]="scrollService.currentSection === section"
+                        fragment="section.anchor"
+                        (click)="isSubMenuOpen = false"
+                    >
+                        {{section.label}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nz-header>
+    <nz-content>
+        <app-home></app-home>
+        <app-expertise></app-expertise>
+        <app-projects></app-projects>
+        <app-about></app-about>
+        <app-contact></app-contact>
+    </nz-content>
+    <nz-footer>
+        <app-footer></app-footer>
+    </nz-footer>
+</nz-layout>

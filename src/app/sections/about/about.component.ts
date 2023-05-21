@@ -1,22 +1,23 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ISection } from 'src/app/section.model';
+import { Component, ElementRef } from '@angular/core';
+import { IAboutArticle } from 'src/app/models/about-page.model';
+import { ApiService } from 'src/app/services/api.service';
+import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.less']
 })
-export class AboutComponent implements OnInit, ISection {
+export class AboutComponent {
 
-  public readonly name: string = 'À propos';
-  public readonly anchorName: string = 'a-propos';
-  public nativeElement!: HTMLDivElement;
+  public elements: Array<IAboutArticle> = [];
 
-  @ViewChild('element')
-  private set element(val: ElementRef<HTMLDivElement>) {
-    this.nativeElement = val.nativeElement;
-  }
+  public constructor(
+    elRef: ElementRef<HTMLElement>,
+    apiService: ApiService,
+    scrollService: ScrollService) {
 
-  public ngOnInit(): void {
+    apiService.getAboutPageData().subscribe(({ elements }) => this.elements = elements);
+    scrollService.registerSection('À propos', elRef.nativeElement, 'a-propos');
   }
 }

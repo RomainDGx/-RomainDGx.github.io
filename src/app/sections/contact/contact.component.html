@@ -1,3 +1,90 @@
 <div #element class="container">
     <h1>Me contacter</h1>
+
+    <div nz-row>
+        <div nz-col [nzXs]="{ span: 22, offset: 1 }" [nzSm]="{ span: 22, offset: 1 }" [nzMd]="{ span: 12, offset: 0 }" id="content">
+            <div class="email">
+                <span nz-icon nzType="mail" nzTheme="outline"></span>
+                <a [href]="'mailto:' + data.email" nz-tooltip nzTooltipTitle="Envoyer un email" nzTooltipPlacement="bottom">
+                    {{data.email}}
+                </a>
+            </div>
+            <div class="links">
+                <a
+                    *ngFor="let link of data.links"
+                    [href]="link.url"
+                    target="_blank"
+                    nz-tooltip
+                    [nzTooltipTitle]="titleTemplate"
+                >
+                <ng-template #titleTemplate>
+                    {{link.tooltipTitle}}
+                    <span nz-icon nzType="link" nzTheme="outline"></span>
+                </ng-template>
+                    <span
+                        nz-icon
+                        [nzType]="link.icon"
+                        nzTheme="outline"
+                        class="icon"
+                        [style]="{ 'color': link.iconColor }"
+                    ></span>
+                    {{link.username}}
+                </a>
+            </div>
+        </div>
+        <div nz-col [nzXs]="{ span: 22, offset: 1 }" [nzSm]="{ span: 22, offset: 1 }" [nzMd]="{ span: 12, offset: 0 }">
+            <form nz-form [formGroup]="messageForm" (ngSubmit)="submitForm()">
+
+                <nz-form-item>
+                    <nz-form-label nzSpan="7" nzRequired>Prénom</nz-form-label>
+                    <nz-form-control nzSpan="12" nzHasFeedback [nzErrorTip]="emptyErrorTpl">
+                        <input nz-input formControlName="firstname" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label nzSpan="7" nzRequired>Nom</nz-form-label>
+                    <nz-form-control nzSpan="12" nzHasFeedback [nzErrorTip]="emptyErrorTpl">
+                        <input nz-input formControlName="lastname" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label nzSpan="7" nzRequired>Email</nz-form-label>
+                    <nz-form-control nzSpan="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+                        <input nz-input formControlName="email" />
+                        <ng-template #emailErrorTpl let-control>
+                            Veuillez rentrer un email valide.
+                        </ng-template>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-label nzSpan="7" nzRequired>Message</nz-form-label>
+                    <nz-form-control nzSpan="12" nzHasFeedback [nzErrorTip]="emptyErrorTpl">
+                        <textarea nz-input formControlName="message" nz-row="2"></textarea>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control [nzXs]="{ offset: 0 }" [nzSm]="{ offset: 7 }" nzSpan="12">
+                        <button
+                            nz-button
+                            nzType="primary"
+                            [disabled]="messageForm.invalid"
+                            nzBlock
+                            [nzLoading]="isLoadingSubmit"
+                        >
+                            {{isLoadingSubmit ? "Envoi en cours" : "Envoyer"}}
+                        </button>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <ng-template #emptyErrorTpl let-control>
+                    Ce champ ne doit pas être vide.
+                </ng-template>
+
+            </form>
+        </div>
+    </div>
 </div>

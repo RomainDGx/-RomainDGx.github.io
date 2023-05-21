@@ -7,7 +7,7 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { fr_FR } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import fr from '@angular/common/locales/fr';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -24,6 +24,15 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { ApiService, LocalApiService } from './services/api.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { ListSplitterPipe } from './pipes/list-splitter.pipe';
+import { LayoutComponent } from './components/layout/layout.component';
 
 registerLocaleData(fr);
 
@@ -34,12 +43,15 @@ registerLocaleData(fr);
     ExpertiseComponent,
     ProjectsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent,
+    ListSplitterPipe,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     NzLayoutModule,
@@ -50,10 +62,18 @@ registerLocaleData(fr);
     NzCardModule,
     NzIconModule,
     NzToolTipModule,
-    NzDrawerModule
+    NzDrawerModule,
+    NzGridModule,
+    NzButtonModule,
+    NzInputModule,
+    NzFormModule,
+    NzMessageModule,
+
+    AppRoutingModule
   ],
   providers: [
-    { provide: NZ_I18N, useValue: fr_FR }
+    { provide: NZ_I18N, useValue: fr_FR },
+    { provide: ApiService, useClass: LocalApiService }
   ],
   bootstrap: [AppComponent]
 })
