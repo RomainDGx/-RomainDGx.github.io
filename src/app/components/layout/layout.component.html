@@ -12,7 +12,7 @@
                 fragment="section.anchor"
                 class="large-screen-menu"
             >
-                {{section.name}}
+                {{section.label}}
             </li>
 
             <li
@@ -33,18 +33,18 @@
                         fragment="section.anchor"
                         (click)="isSubMenuOpen = false"
                     >
-                        {{section.name}}
+                        {{section.label}}
                     </li>
                 </ul>
             </li>
         </ul>
     </nz-header>
     <nz-content>
-        <app-home #section></app-home>
-        <app-expertise #section></app-expertise>
-        <app-projects #section></app-projects>
-        <app-about #section></app-about>
-        <app-contact #section></app-contact>
+        <app-home></app-home>
+        <app-expertise></app-expertise>
+        <app-projects></app-projects>
+        <app-about></app-about>
+        <app-contact></app-contact>
     </nz-content>
     <nz-footer>
         <app-footer></app-footer>

@@ -1,29 +1,16 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { IContactPageData } from 'src/app/models/contact-page.model';
-import { ISection } from 'src/app/models/section.model';
 import { ApiService } from 'src/app/services/api.service';
+import { ScrollService } from 'src/app/services/scroll.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.less']
 })
-export class ContactComponent implements ISection {
-
-  //#region ISection
-
-  public readonly name: string = 'Contact';
-  public readonly anchorName: string = 'contact';
-  public nativeElement!: HTMLDivElement;
-
-  @ViewChild('element')
-  private set element(val: ElementRef<HTMLDivElement>) {
-    this.nativeElement = val.nativeElement;
-  }
-
-  //#endregion
+export class ContactComponent {
 
   public data: IContactPageData = {
     email: '',
@@ -34,6 +21,8 @@ export class ContactComponent implements ISection {
   public isLoadingSubmit = false;
 
   public constructor(
+    elRef: ElementRef<HTMLElement>,
+    scrollService: ScrollService,
     formBuilder: FormBuilder,
     private readonly message: NzMessageService,
     apiService: ApiService) {
@@ -46,6 +35,7 @@ export class ContactComponent implements ISection {
     });
 
     apiService.getContactPageData().subscribe(data => this.data = data);
+    scrollService.registerSection('Contact', elRef.nativeElement, 'contact');
   }
 
   public submitForm(): void {

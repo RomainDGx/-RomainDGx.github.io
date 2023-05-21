@@ -15,19 +15,18 @@ export class ScrollService {
     private readonly _viewportScroller: ViewportScroller,
     private readonly _router: Router
   ) {
+    window.addEventListener('scroll', () => this.triggerScroll(window.scrollY));
   }
 
-  public init(sections: ISection[]): void {
-
-    for (const section of (this.sections = sections)) {
-      section.nativeElement.id = section.anchorName;
-    }
-    this.triggerScroll(0);
+  public registerSection(label: string, nativeElement: HTMLElement, anchorName: string) {
+    nativeElement.id = anchorName;
+    this.sections.push({ label, nativeElement });
+    this.triggerScroll(window.screenY);
   }
 
   public scrollTo(section: ISection): void {
     this.currentSection = section;
-    this._viewportScroller.scrollToAnchor(section.anchorName);
+    this._viewportScroller.scrollToAnchor(section.nativeElement.id);
   }
 
   public scrollToNext(): void {
@@ -37,17 +36,16 @@ export class ScrollService {
     }
   }
 
-  public async triggerScroll(posY: number): Promise<void> {
+  private async triggerScroll(posY: number): Promise<void> {
 
     for (let i = this.sections.length - 1; i >= 0; i--) {
       const section = this.sections[i];
 
       if (section.nativeElement.offsetTop <= posY + 2) {
         this.currentSection = section;
-        await this._router.navigate(['/'], { fragment: this.currentSection?.anchorName });
+        await this._router.navigate(['/'], { fragment: this.currentSection?.nativeElement.id });
         break;
       }
     }
-    // const { top, bottom } = section.nativeElement.getBoundingClientRect();
   }
 }
