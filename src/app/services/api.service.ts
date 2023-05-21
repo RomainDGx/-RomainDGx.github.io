@@ -19,7 +19,7 @@ export class LocalApiService extends ApiService {
                         title: 'Qui je suis ?',
                         content: `
 Je m'appelle Romain Delorme-Glorieux, j'ai ${DateTime.fromObject({ year: 2000, month: 12, day: 26 }, { zone: 'Europe/Paris' }).diffNow().negate().toFormat('yy')} ans et je suis <b>développeur logiciel</b>.<br/>
-Grâce à mes années d'études et de pratique dans le domaine de l'informatique, j'ai acquis une certaine maîtrise sur de nombreuses technologies et outils. Notamment sur mes technologies de prédilection, l'environnement <b>.Net</b> et le langage <b>C#</b>.`
+Grâce à mes années d'études et de pratique dans le domaine de l'informatique, j'ai acquis une certaine maîtrise sur de nombreuses technologies et outils. Notamment sur mes technologies de prédilection : l'environnement <b>.Net</b> et le langage <b>C#</b>.`
                     },
                     {
                         icon: 'heart',
@@ -48,13 +48,17 @@ Grâce à mes années d'études et de pratique dans le domaine de l'informatique
                 links: [
                     {
                         icon: 'github',
+                        iconColor: 'black',
                         url: 'https://github.com/RomainDGx',
-                        username: 'RomainDGx'
+                        username: 'RomainDGx',
+                        tooltipTitle: 'Voir mon GitHub'
                     },
                     {
                         icon: 'gitlab',
+                        iconColor: '#e24329',
                         url: 'https://gitlab.com/RomainDGx',
-                        username: 'RomainDGx'
+                        username: 'RomainDGx',
+                        tooltipTitle: 'Voir mon GitLab'
                     }
                 ]
             });

@@ -54,6 +54,6 @@ export class ContactComponent implements ISection {
       this.message.success('Votre message à été envoyé avec succès !');
       this.isLoadingSubmit = false;
       this.messageForm.reset();
-    }, Math.random() * 2000);
+    }, Math.random() * 1500 + 500);
   }
 }
