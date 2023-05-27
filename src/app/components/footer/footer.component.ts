@@ -8,6 +8,12 @@ import { DateTime } from 'luxon';
 })
 export class FooterComponent {
 
+  public isVisibleTooltip: boolean = false;
+
+  constructor() {
+    addEventListener('scroll', () => this.isVisibleTooltip = false);
+  }
+
   public get copyrightDate(): string {
     const startYear = DateTime.fromObject({ year: 2023 }).year;
     const currentYear = DateTime.now().year;
