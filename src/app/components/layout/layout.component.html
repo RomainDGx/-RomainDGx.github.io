@@ -17,13 +17,16 @@
 
             <li
                 nz-submenu
-                nzIcon="menu"
                 nzSelected="false"
                 nzPlacement="bottomRight"
                 class="small-screen-menu"
                 [nzOpen]="isSubMenuOpen"
                 (click)="isSubMenuOpen = true"
+                [nzTitle]="dropdownbuttton"
             >
+                <ng-template #dropdownbuttton>
+                    <span nz-icon nzType="menu" nzTheme="outline" class="small-screen-menu-icon"></span>
+                </ng-template>
                 <ul>
                     <li
                         nz-menu-item
