@@ -26,7 +26,7 @@ export class LocalApiService extends ApiService {
 je travaille régulièrement avec le langage <b>C#</b>. Je l'ai notamment utilisé à travers l'environnement <b>.NET Core</b> pour développer
 des applications backend avec le framework <b>ASP.NET Core</b>.</p>
 <p>J'ai pour habutide de développer sur <b>Visual Studio</b>. Je possède maintenant une bonne maîtrise de cet IDE
-et des différents outils qu'il propose pour aider au développement et au déboggage.</p>`
+et des différents outils qu'il propose pour aider au développement et au débogage.</p>`
                 },
                 {
                     icons: [
@@ -50,10 +50,11 @@ mais aussi beaucoup de SPA sur de l'<b>Angular 12 et +</b> et du <b>Vue.js</b>, 
                     title: 'Côté base de données',
                     content: `
 <p>Pendant mes études, j'ai eu l'occasion d'apprendre le fonctionnement du <b>SQL</b>,
-notamment avec l'utilisation des bases de donnnées que sont <b>MySQL</b> et <b>PosgreSQL</b>.</p>
-<p>À la suite, pendant ma formation, j'ai beaucoup travaillé avec la base de données <b>Microsoft SQL Server</b>
-où j'ai pu utiliser des fonctionnalitées avancées du langage.</p>
-<p>J'ai utilisé les interfaces que sont <b>pgAdmin</b> et <b>SQL Server Management Studio</b> pour communiquer avec les bases de données.</p>`
+notamment avec l'utilisation des bases de données que sont <b>MySQL</b> et <b>PosgreSQL</b>.</p>
+<p>À la suite, pendant ma formation, j'ai beaucoup travaillé avec <b>Microsoft SQL Server</b>
+où j'ai pu utiliser des fonctionnalités avancées du langage.</p>
+<p>J'ai utilisé les interfaces que sont <b>pgAdmin</b> et <b>SQL Server Management Studio</b>
+pour communiquer avec les bases de données.</p>`
                 },
                 {
                     icons: [
@@ -63,7 +64,7 @@ où j'ai pu utiliser des fonctionnalitées avancées du langage.</p>
                     ],
                     title: 'Workflow',
                     content: `
-<p>J'ai pris pour habitude que tous les projets sur lesques je travail aient un <b>Git</b>.
+<p>J'ai pris pour habitude que tous les projets sur lesquels je travaille aient un <b>Git</b>.
 Je suis donc parfaitement rodé à l'utilisation de cet outil : utilisation des branches,
 travail en parallèle, release sur master/develop, merge conlict.</p>
 <p>J'utilise couramment les plateformes que sont <b>GitHub</b> et <b>GitLab</b> pour hébeger mes projets
@@ -76,10 +77,11 @@ et les repositories d'entreprise.</p>`
                     ],
                     title: 'Recherche et documentation',
                     content: `
-<p>Le milieu de développement informatique est déjà très complexe et il continue d'évoluer,
-il est évidement que je ne peux pas tout connaître. Il est donc important de savoir se documenter, mais aussi
-de chercher aux bons endroits pour trouver les meilleurs solutions aux problèmes que je rencontre. Mes meilleurs amis
-dans ce cas là sont <b>Stack overflow</b>, Goolge et les pages de documentation.</p>`
+<p>Le milieu de développement informatique est déjà très complexe et il continue d'évoluer.
+Il est évidement que personne ne peut tout connaître. Pour s'en sortir, il est donc important
+de savoir se documenter, mais aussi de chercher aux bons endroits pour trouver les meilleures
+solutions aux problèmes que l'on rencontre. Mes meilleurs amis dans ce cas là sont <b>Stack overflow</b>,
+Goolge et les pages de documentation.</p>`
                 }
             ]);
         });
