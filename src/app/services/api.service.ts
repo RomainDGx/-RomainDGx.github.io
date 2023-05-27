@@ -2,13 +2,88 @@ import { Observable } from "rxjs";
 import { IContactPageData } from "../models/contact-page.model";
 import { IAboutPageData } from "../models/about-page.model";
 import { DateTime } from 'luxon';
+import { IExpertisePageData } from "../models/expertise.model";
 
 export abstract class ApiService {
+    public abstract getExpertisePageData(): Observable<IExpertisePageData[]>;
     public abstract getAboutPageData(): Observable<IAboutPageData>;
     public abstract getContactPageData(): Observable<IContactPageData>;
 }
 
 export class LocalApiService extends ApiService {
+
+    public override getExpertisePageData(): Observable<IExpertisePageData[]> {
+        return new Observable<IExpertisePageData[]>(subscribe => {
+            subscribe.next([
+                {
+                    icons: [
+                        '/assets/icon/c--4.svg',
+                        '/assets/icon/dot-net-core-7.svg',
+                    ],
+                    title: 'Environnement .NET',
+                    content: `
+<p>Depuis maintenant ${DateTime.fromObject({ year: 2019, month: 9 }, { zone: 'Europe/Paris' }).diffNow().negate().toFormat('y')} ans,
+je travaille régulièrement avec le langage <b>C#</b>. Je l'ai notamment utilisé à travers l'environnement <b>.NET Core</b> pour développer
+des applications backend avec le framework <b>ASP.NET Core</b>.</p>
+<p>J'ai pour habutide de développer sur <b>Visual Studio</b>. Je possède maintenant une bonne maîtrise de cet IDE
+et des différents outils qu'il propose pour aider au développement et au déboggage.</p>`
+                },
+                {
+                    icons: [
+                        '/assets/icon/angular-icon-1.svg',
+                        '/assets/icon/vue-js-1.svg',
+                        '/assets/icon/typescript.svg',
+                        '/assets/icon/nodejs-1.svg'
+                    ],
+                    title: 'Autour de JavaScript',
+                    content: `
+Tout au long des mes études de développement informatique, et durant mes expériences professionnelles, j'ai souvent travaillé
+avec l'écosystème autour de <b>JavaScript</b>. J'ai eu l'occasion de développer des applications backend avec <b>Node.js</b>,
+mais aussi beaucoup de SPA sur de l'<b>Angular 12 et +</b> et du <b>Vue.js</b>, avec l'utilisation de <b>TypeScript</b>.`
+                },
+                {
+                    icons: [
+                        '/assets/icon/microsoft-sql-server-1.svg',
+                        '/assets/icon/postgresql.svg',
+                        '/assets/icon/mysql-3.svg'
+                    ],
+                    title: 'Côté base de données',
+                    content: `
+<p>Pendant mes études, j'ai eu l'occasion d'apprendre le fonctionnement du <b>SQL</b>,
+notamment avec l'utilisation des bases de donnnées que sont <b>MySQL</b> et <b>PosgreSQL</b>.</p>
+<p>À la suite, pendant ma formation, j'ai beaucoup travaillé avec la base de données <b>Microsoft SQL Server</b>
+où j'ai pu utiliser des fonctionnalitées avancées du langage.</p>
+<p>J'ai utilisé les interfaces que sont <b>pgAdmin</b> et <b>SQL Server Management Studio</b> pour communiquer avec les bases de données.</p>`
+                },
+                {
+                    icons: [
+                        '/assets/icon/git.svg',
+                        '/assets/icon/github-icon-1.svg',
+                        '/assets/icon/gitlab.svg'
+                    ],
+                    title: 'Workflow',
+                    content: `
+<p>J'ai pris pour habitude que tous les projets sur lesques je travail aient un <b>Git</b>.
+Je suis donc parfaitement rodé à l'utilisation de cet outil : utilisation des branches,
+travail en parallèle, release sur master/develop, merge conlict.</p>
+<p>J'utilise couramment les plateformes que sont <b>GitHub</b> et <b>GitLab</b> pour hébeger mes projets
+et les repositories d'entreprise.</p>`
+                },
+                {
+                    icons: [
+                        '/assets/icon/stack-overflow.svg',
+                        '/assets/icon/google-g-2015.svg',
+                    ],
+                    title: 'Recherche et documentation',
+                    content: `
+<p>Le milieu de développement informatique est déjà très complexe et il continue d'évoluer,
+il est évidement que je ne peux pas tout connaître. Il est donc important de savoir se documenter, mais aussi
+de chercher aux bons endroits pour trouver les meilleurs solutions aux problèmes que je rencontre. Mes meilleurs amis
+dans ce cas là sont <b>Stack overflow</b>, Goolge et les pages de documentation.</p>`
+                }
+            ]);
+        });
+    }
 
     public override getAboutPageData(): Observable<IAboutPageData> {
         return new Observable<IAboutPageData>(subscribe => {

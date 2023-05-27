@@ -33,6 +33,7 @@ import { ApiService, LocalApiService } from './services/api.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListSplitterPipe } from './pipes/list-splitter.pipe';
 import { LayoutComponent } from './components/layout/layout.component';
+import { NzImageModule } from 'ng-zorro-antd/image';
 
 registerLocaleData(fr);
 
@@ -68,6 +69,7 @@ registerLocaleData(fr);
     NzInputModule,
     NzFormModule,
     NzMessageModule,
+    NzImageModule,
 
     AppRoutingModule
   ],
