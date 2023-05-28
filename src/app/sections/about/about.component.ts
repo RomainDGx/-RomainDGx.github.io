@@ -12,12 +12,9 @@ export class AboutComponent {
 
   public elements: Array<IAboutArticle> = [];
 
-  public constructor(
-    elRef: ElementRef<HTMLElement>,
-    apiService: ApiService,
-    scrollService: ScrollService) {
+  constructor(elRef: ElementRef<HTMLElement>, apiService: ApiService, scrollService: ScrollService) {
 
-    apiService.getAboutPageData().subscribe(({ elements }) => this.elements = elements);
+    apiService.getAboutPageData().subscribe(articles => this.elements = articles);
     scrollService.registerSection('À propos', elRef.nativeElement, 'a-propos');
   }
 }

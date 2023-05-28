@@ -1,24 +1,22 @@
 <div #element class="container">
     <h1>À propos de moi</h1>
 
-    <div
-    nz-row
-        nzJustify="center"
-        *ngFor="let row of elements | listSplitter:2"
-        class="line"
-    >
-        <div
-            nz-col
-            nzXs="24"
-            nzSm="20"
-            nzMd="10"
-            *ngFor="let col of row"
-            class="element"
-        >
-            <span nz-icon [nzType]="col.icon" nzTheme="outline" class="icon"></span>
-            <h2 class="title">{{col.title}}</h2>
-            <div class="text" [innerHTML]="col.content"></div>
+    <div nz-row nzJustify="center">
+        <div nz-col nzXs="24" nzSm="20">
+            <div nz-row nzJustify="start">
+                <div
+                    nz-col
+                    nzXs="24"
+                    nzSm="24"
+                    nzMd="12"
+                    *ngFor="let element of elements"
+                    class="element"
+                >
+                    <span nz-icon [nzType]="element.icon" nzTheme="outline" class="icon"></span>
+                    <h2 class="title">{{ element.title }}</h2>
+                    <div class="text" [innerHTML]="element.content"></div>
+                </div>
+            </div>
         </div>
-        <div nz-col nzSpan="10" *ngIf="row.length === 1"></div>
     </div>
 </div>
