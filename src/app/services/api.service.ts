@@ -3,9 +3,11 @@ import { IContactPageData } from "../models/contact-page.model";
 import { IAboutPageData } from "../models/about-page.model";
 import { DateTime } from 'luxon';
 import { IExpertisePageData } from "../models/expertise.model";
+import { IProject } from "../models/project.model";
 
 export abstract class ApiService {
     public abstract getExpertisePageData(): Observable<IExpertisePageData[]>;
+    public abstract getProjectsPageData(): Observable<IProject[]>;
     public abstract getAboutPageData(): Observable<IAboutPageData>;
     public abstract getContactPageData(): Observable<IContactPageData>;
 }
@@ -82,6 +84,83 @@ Il est évidement que personne ne peut tout connaître. Pour s'en sortir, il est
 de savoir se documenter, mais aussi de chercher aux bons endroits pour trouver les meilleures
 solutions aux problèmes que l'on rencontre. Mes meilleurs amis dans ce cas là sont <b>Stack overflow</b>,
 Goolge et les pages de documentation.</p>`
+                }
+            ]);
+        });
+    }
+
+    public override getProjectsPageData(): Observable<IProject[]> {
+        return new Observable<IProject[]>(subscribe => {
+            subscribe.next([
+                {
+                    name: 'Mosaïc',
+                    image: '/assets/mosaic.png',
+                    tags: [
+                        'C#',
+                        'ASP.NET Core',
+                        'Angular',
+                        'SQL Server',
+                        'Temps réel'
+                    ],
+                    content: `
+<p>Signature Mosaïc est une solution d'affichage dynamique sur écrans par le biais de Raspberry PI,
+le tout piloté par un serveur central. Cette appllication est doté d'une interface web pour les utilisateurs.</p>
+<p>Ceci est l'un des projets les plus ambitieux sur lesquels j'ai pu travailler. En effet, cette solution
+est composé de plusieurs serveurs et un grand nombre de clients, le tout travaillant en temps réel pour
+afficher le contenu souhaité.</p>`,
+                },
+                {
+                    name: 'CK Database',
+                    image: '/assets/PackageIcon.png',
+                    tags: [
+                        'C#',
+                        'SQL',
+                        'Package nuget',
+                        'Architecture logicielle'
+                    ],
+                    content: `
+<p>Mon entreprise développe un écosystème pour base de données autour d'une philosophie, <b>le package first</b>.
+L'idée étant qu'en ajoutant des packages dans un projet, ces derniers installent tout ce dont
+ils ont besoin pour fonctionner, ainsi cela rend le développment d'applications bien plus rapide.</p>
+<p>Je participe activement au développements de cet écosystème en créant des packages qui viennent rajouter des concepts :
+<a target="_blank" href="https://github.com/signature-opensource/CK-DB-Workspace">CK.DB.Workspace</a>,
+<a target="_blank" href="https://github.com/signature-opensource/CK-DB-User-UserBanned/tree/develop">CK.DB.User.UserBanned</a>,
+<a target="_blank" href="https://github.com/signature-opensource/CK-DB-User-UserBanned/tree/develop">CK.DB.User.Password.Banned</a>,
+CK.DB.WebPage.</p>`
+                },
+                {
+                    name: 'Portfolio',
+                    image: '/assets/portfolio.png',
+                    tags: [
+                        'Angular',
+                        'NG-ZORRO',
+                        'GitHub Pages',
+                        'TypeScript',
+                        'Less'
+                    ],
+                    content: `
+<p>Ce portfolio est un exemple concret de ce que je suis capable de produire en terme de SPA.
+Je l'ai développé en <b>Angular</b>, avec l'aide de la librairie <b>NG-ZORRO</b>. Le tout hébergé
+via le service <b>GitHub Page</b>.</p>
+<p>J'ai tenu à le développer de avec des pratiques professionnelles et d'une façon le rendant
+facile à faire évoluer.</p>`,
+                    link: 'https://github.com/RomainDGx/RomainDGx.github.io'
+                },
+                {
+                    name: 'Bot Sakuya',
+                    image: '/assets/error_418.png',
+                    tags: [
+                        'Node.js',
+                        'TypeScript',
+                        'Bot Discord',
+                    ],
+                    content: `
+<p>Passionné de programmation, je n'hésite pas à développer pour des projets personnels !</p>
+<p>Étant membre de la communauté francophone autour de la série de jeux Touhou Project, j'ai développé un bot destiné
+à créer de l'activité sur le serveur Discord de cette dernière.</p>
+<p>J'ai pris plaisir à apprendre comment communiquer avec l'API de Discord et développer une
+applications qui serait amusante à utiliser.</p>`,
+                    link: 'https://cloud2.touhou-online.net/Poisson/SakuyaBot'
                 }
             ]);
         });

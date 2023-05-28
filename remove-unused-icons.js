@@ -29,7 +29,9 @@ const usedIcon = {
         'up',
         'down',
         // Home
-        'down-circle'
+        'down-circle',
+        // Project
+        'plus'
     ],
     twotone: []
 };

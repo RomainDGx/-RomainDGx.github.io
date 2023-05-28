@@ -34,6 +34,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ListSplitterPipe } from './pipes/list-splitter.pipe';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 registerLocaleData(fr);
 
@@ -70,6 +72,8 @@ registerLocaleData(fr);
     NzFormModule,
     NzMessageModule,
     NzImageModule,
+    NzTagModule,
+    NzModalModule,
 
     AppRoutingModule
   ],
