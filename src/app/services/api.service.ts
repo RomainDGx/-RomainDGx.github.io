@@ -69,7 +69,7 @@ pour communiquer avec les bases de données.</p>`
 <p>J'ai pris pour habitude que tous les projets sur lesquels je travaille aient un <b>Git</b>.
 Je suis donc parfaitement rodé à l'utilisation de cet outil : utilisation des branches,
 travail en parallèle, release sur master/develop, merge conlict.</p>
-<p>J'utilise couramment les plateformes que sont <b>GitHub</b> et <b>GitLab</b> pour hébeger mes projets
+<p>J'utilise couramment les plateformes que sont <b>GitHub</b> et <b>GitLab</b> pour héberger mes projets
 et les repositories d'entreprise.</p>`
                 },
                 {
@@ -80,10 +80,10 @@ et les repositories d'entreprise.</p>`
                     title: 'Recherche et documentation',
                     content: `
 <p>Le milieu de développement informatique est déjà très complexe et il continue d'évoluer.
-Il est évidement que personne ne peut tout connaître. Pour s'en sortir, il est donc important
+Il est évidemment que personne ne peut tout connaître. Pour s'en sortir, il est donc important
 de savoir se documenter, mais aussi de chercher aux bons endroits pour trouver les meilleures
-solutions aux problèmes que l'on rencontre. Mes meilleurs amis dans ce cas là sont <b>Stack overflow</b>,
-Goolge et les pages de documentation.</p>`
+solutions aux problèmes que l'on rencontre. Mes meilleurs amis dans ce cas-là sont <b>Stack overflow</b>,
+Google et les pages de documentation.</p>`
                 }
             ]);
         });
@@ -104,9 +104,9 @@ Goolge et les pages de documentation.</p>`
                     ],
                     content: `
 <p>Signature Mosaïc est une solution d'affichage dynamique sur écrans par le biais de Raspberry PI,
-le tout piloté par un serveur central. Cette appllication est doté d'une interface web pour les utilisateurs.</p>
+le tout piloté par un serveur central. Cette application est dotée d'une interface web pour les utilisateurs.</p>
 <p>Ceci est l'un des projets les plus ambitieux sur lesquels j'ai pu travailler. En effet, cette solution
-est composé de plusieurs serveurs et un grand nombre de clients, le tout travaillant en temps réel pour
+est composée de plusieurs serveurs et un grand nombre de clients, le tout travaillant en temps réel pour
 afficher le contenu souhaité.</p>`,
                 },
                 {
@@ -122,7 +122,7 @@ afficher le contenu souhaité.</p>`,
 <p>Mon entreprise développe un écosystème pour base de données autour d'une philosophie, <b>le package first</b>.
 L'idée étant qu'en ajoutant des packages dans un projet, ces derniers installent tout ce dont
 ils ont besoin pour fonctionner, ainsi cela rend le développment d'applications bien plus rapide.</p>
-<p>Je participe activement au développements de cet écosystème en créant des packages qui viennent rajouter des concepts :
+<p>Je participe activement au développement de cet écosystème en créant des packages qui viennent rajouter des concepts :
 <a target="_blank" href="https://github.com/signature-opensource/CK-DB-Workspace">CK.DB.Workspace</a>,
 <a target="_blank" href="https://github.com/signature-opensource/CK-DB-User-UserBanned/tree/develop">CK.DB.User.UserBanned</a>,
 <a target="_blank" href="https://github.com/signature-opensource/CK-DB-User-UserBanned/tree/develop">CK.DB.User.Password.Banned</a>,
@@ -159,7 +159,7 @@ facile à faire évoluer.</p>`,
 <p>Étant membre de la communauté francophone autour de la série de jeux Touhou Project, j'ai développé un bot destiné
 à créer de l'activité sur le serveur Discord de cette dernière.</p>
 <p>J'ai pris plaisir à apprendre comment communiquer avec l'API de Discord et développer une
-applications qui serait amusante à utiliser.</p>`,
+application qui serait amusante à utiliser.</p>`,
                     link: 'https://cloud2.touhou-online.net/Poisson/SakuyaBot'
                 }
             ]);
@@ -181,7 +181,7 @@ Grâce à mes années d'études et de pratique dans le domaine de l'informatique
                     title: 'Hobbies et passions',
                     content: `
 <p><b>Plongée sous-marine</b> : J'aime le calme et la beauté des milieux marins, être spectateur de cet autre monde a pour moi quelque chose de relaxant.</p>
-<p><b>Culture japonaise</b> : Je rêve de visiter ce pays et je suis passionné d'animation japonaise pour les messages profonds et les reflexion qu'elle peut susciter.</p>
+<p><b>Culture japonaise</b> : Je rêve de visiter ce pays et je suis passionné d'animation japonaise pour les messages profonds et les réflexions qu'elle peut susciter.</p>
 <p><b>Jeux vidéos</b> : Quand je joue, je recherche plus qu'un bon gameplay : une histoire prenante et une direction artistique à couper le souffle.</p>`
                 },
                 {
@@ -189,7 +189,7 @@ Grâce à mes années d'études et de pratique dans le domaine de l'informatique
                     title: 'Côté travail',
                     content: `
 <p>Je suis avant tout passionné de programmation et d'<b>architecture logicielle</b>. Il est important pour moi que je puisse travailler sur ces sujets dans mon quotidien en entreprise afin d'être épanoui dans ce que je fais.</p>
-<p>Pour moi, l'entreprise et tout particulièrement dans une équipe de développeur, <b>la communication</b> est très importante. En effet c'est par ce biais que l'on peut se comprendre mutuellement, et être plus efficace dans notre travail.</p>`
+<p>Pour moi, l'entreprise et tout particulièrement dans une équipe de développeurs, <b>la communication</b> est très importante. En effet c'est par ce biais que l'on peut se comprendre mutuellement, et être plus efficace dans notre travail.</p>`
                 }
             ]);
         });
