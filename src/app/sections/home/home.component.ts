@@ -8,10 +8,13 @@ import { ScrollService } from 'src/app/services/scroll.service';
 })
 export class HomeComponent {
 
+  public isVisibleTooltip: boolean = false;
+
   constructor(
     elRef: ElementRef<HTMLElement>,
     private readonly scrollService: ScrollService) {
     scrollService.registerSection('Accueil', elRef.nativeElement, 'accueil');
+    addEventListener('scroll', () => this.isVisibleTooltip = false);
   }
 
   public scrollToNext(): void {

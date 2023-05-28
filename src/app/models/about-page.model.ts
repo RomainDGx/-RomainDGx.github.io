@@ -3,7 +3,3 @@ export interface IAboutArticle {
     title: string;
     content: string;
 };
-
-export interface IAboutPageData {
-    elements: Array<IAboutArticle>;
-};

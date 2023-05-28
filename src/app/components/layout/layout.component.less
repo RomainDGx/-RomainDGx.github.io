@@ -3,6 +3,7 @@ nz-header {
     width: 100%;
     z-index: 10;
     background-color: white;
+    height: auto;
 
     .name {
         color: black;
@@ -11,14 +12,24 @@ nz-header {
     }
 
     [nz-menu] {
-        line-height: 63px;
         float: right;
+    }
+
+    .header-menu {
+        height: 100%;
     }
 }
 
 @media screen and (max-width: 900px) {
     .large-screen-menu {
         display: none;
+    }
+    nz-header {
+        padding: 0 20px;
+    }
+    .small-screen-menu-icon {
+        margin: 0 15px;
+        font-size: 20px;
     }
 }
 

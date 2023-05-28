@@ -5,7 +5,13 @@
         <div nz-col [nzXs]="{ span: 22, offset: 1 }" [nzSm]="{ span: 22, offset: 1 }" [nzMd]="{ span: 12, offset: 0 }" id="content">
             <div class="email">
                 <span nz-icon nzType="mail" nzTheme="outline"></span>
-                <a [href]="'mailto:' + data.email" nz-tooltip nzTooltipTitle="Envoyer un email" nzTooltipPlacement="bottom">
+                <a
+                    [href]="'mailto:' + data.email"
+                    nz-tooltip
+                    nzTooltipTitle="Envoyer un email"
+                    nzTooltipPlacement="bottom"
+                    [(nzTooltipVisible)]="isVisibleMailTooltip"
+                >
                     {{data.email}}
                 </a>
             </div>
@@ -16,6 +22,7 @@
                     target="_blank"
                     nz-tooltip
                     [nzTooltipTitle]="titleTemplate"
+                    [(nzTooltipVisible)]="link.isVisibleTooltip"
                 >
                 <ng-template #titleTemplate>
                     {{link.tooltipTitle}}

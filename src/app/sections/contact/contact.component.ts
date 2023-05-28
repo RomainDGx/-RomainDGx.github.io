@@ -1,9 +1,13 @@
 import { Component, ElementRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { map } from 'rxjs';
 import { IContactPageData } from 'src/app/models/contact-page.model';
 import { ApiService } from 'src/app/services/api.service';
 import { ScrollService } from 'src/app/services/scroll.service';
+
+type ExtendedLink = (IContactPageData['links'] extends (infer T)[] ? T : never) & { isVisibleTooltip: boolean };
+type ExtendedIContactPageData = Omit<IContactPageData, 'links'> & { links: Array<ExtendedLink> };
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +16,10 @@ import { ScrollService } from 'src/app/services/scroll.service';
 })
 export class ContactComponent {
 
-  public data: IContactPageData = {
+
+  public isVisibleMailTooltip: boolean = false;
+
+  public data: ExtendedIContactPageData = {
     email: '',
     links: []
   };
@@ -34,8 +41,19 @@ export class ContactComponent {
       message: new FormControl('', Validators.required)
     });
 
-    apiService.getContactPageData().subscribe(data => this.data = data);
+    apiService.getContactPageData()
+              .pipe(map<IContactPageData, ExtendedIContactPageData>(data => ({
+                email: data.email,
+                links: data.links.map<ExtendedLink>(link => ({ ...link, isVisibleTooltip: false }))
+              })))
+              .subscribe(value => this.data = value);
+
     scrollService.registerSection('Contact', elRef.nativeElement, 'contact');
+
+    addEventListener('scroll', () => {
+      this.isVisibleMailTooltip = false;
+      this.data.links.forEach(link => link.isVisibleTooltip = false);
+    });
   }
 
   public submitForm(): void {

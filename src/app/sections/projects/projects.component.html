@@ -1,3 +1,63 @@
 <div #element class="container">
     <h1>Mes réalisations</h1>
+
+    <div nz-row nzJustify="center">
+        <div nz-col nzXs="24" nzSm="24" nzMd="20">
+            <div nz-row nzJustify="start">
+                <div
+                    *ngFor="let project of projects"
+                    nz-col
+                    nzXs="24"
+                    nzSm="24"
+                    nzMd="12"
+                    nzXXl="8"
+                    class="card-container"
+                >
+                    <nz-card
+                        nzHoverable
+                        [nzCover]="cardCover"
+                        [nzActions]="[cardExpendAction]"
+                        style="width: 340px;"
+                        (click)="project.isOpenModal = true"
+                    >
+                        <h2 class="card-title">{{ project.name }}</h2>
+                        <div>
+                            <nz-tag *ngFor="let tag of project.tags" nzColor="blue" class="tag">{{ tag }}</nz-tag>
+                        </div>
+                    </nz-card>
+
+                    <ng-template #cardCover>
+                        <img [src]="project.image" alt="An image" />
+                    </ng-template>
+                    <ng-template #cardExpendAction>
+                        <span nz-icon nzType="plus" nzTheme="outline"></span>
+                    </ng-template>
+
+                    <nz-modal
+                        [(nzVisible)]="project.isOpenModal"
+                        nzClassName="project-modal"
+                        [nzCancelText]="null"
+                        [nzTitle]="modalTitle"
+                        (nzOnOk)="project.isOpenModal = false"
+                        (nzOnCancel)="project.isOpenModal = false"
+                        nzOkText="Super !"
+                        nzCentered
+                    >
+                        <ng-container *nzModalContent>
+                            <div class="modal-content">
+                                <div [innerHTML]="project.content"></div>
+                                <a *ngIf="project.link" [href]="project.link" target="_blank">
+                                    Voir le projet
+                                    <span nz-icon nzType="link" nzTheme="outline"></span>
+                                </a>
+                            </div>
+                        </ng-container>
+                        <ng-template #modalTitle>
+                            <h2>{{ project.name }}</h2>
+                        </ng-template>
+                    </nz-modal>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
