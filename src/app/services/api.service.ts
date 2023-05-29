@@ -70,7 +70,7 @@ pour communiquer avec les bases de données.</p>`
 Je suis donc parfaitement rodé à l'utilisation de cet outil : utilisation des branches,
 travail en parallèle, release sur master/develop, merge conlict.</p>
 <p>J'utilise couramment les plateformes que sont <b>GitHub</b> et <b>GitLab</b> pour héberger mes projets
-et les repositories d'entreprise.</p>`
+et les dépôts d'entreprise.</p>`
                 },
                 {
                     icons: [
