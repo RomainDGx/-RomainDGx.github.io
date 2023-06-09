@@ -20,7 +20,6 @@ export class ContactComponent {
   public isVisibleMailTooltip: boolean = false;
 
   public data: ExtendedIContactPageData = {
-    email: '',
     links: []
   };
 
@@ -43,7 +42,6 @@ export class ContactComponent {
 
     apiService.getContactPageData()
               .pipe(map<IContactPageData, ExtendedIContactPageData>(data => ({
-                email: data.email,
                 links: data.links.map<ExtendedLink>(link => ({ ...link, isVisibleTooltip: false }))
               })))
               .subscribe(value => this.data = value);

@@ -76,6 +76,7 @@ et les dépôts d'entreprise.</p>`
                     icons: [
                         '/assets/icon/stack-overflow.svg',
                         '/assets/icon/google-g-2015.svg',
+                        '/assets/icon/openai-2.svg'
                     ],
                     title: 'Recherche et documentation',
                     content: `
@@ -198,7 +199,6 @@ Grâce à mes années d'études et de pratique dans le domaine de l'informatique
     public override getContactPageData(): Observable<IContactPageData> {
         return new Observable<IContactPageData>(subscribe => {
             subscribe.next({
-                email: 'delormeglorieux@gmail.com',
                 links: [
                     {
                         icon: 'github',
