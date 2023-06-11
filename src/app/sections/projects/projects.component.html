@@ -38,9 +38,9 @@
                         nzClassName="project-modal"
                         [nzCancelText]="null"
                         [nzTitle]="modalTitle"
-                        (nzOnOk)="project.isOpenModal = false"
+                        (nzOnOk)="openMoreInforamtions(project)"
                         (nzOnCancel)="project.isOpenModal = false"
-                        nzOkText="Super !"
+                        nzOkText="En savoir plus"
                         nzCentered
                     >
                         <ng-container *nzModalContent>

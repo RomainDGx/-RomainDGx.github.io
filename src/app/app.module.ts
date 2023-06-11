@@ -35,6 +35,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ComptencesComponent } from './sections/comptences/comptences.component';
 
 registerLocaleData(fr);
 
@@ -47,7 +48,8 @@ registerLocaleData(fr);
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    ComptencesComponent
   ],
   imports: [
     BrowserModule,
