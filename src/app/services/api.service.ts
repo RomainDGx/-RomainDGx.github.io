@@ -27,7 +27,7 @@ export class LocalApiService extends ApiService {
 <p>Depuis maintenant ${DateTime.fromObject({ year: 2019, month: 9 }, { zone: 'Europe/Paris' }).diffNow().negate().toFormat('y')} ans,
 je travaille régulièrement avec le langage <b>C#</b>. Je l'ai notamment utilisé à travers l'environnement <b>.NET Core</b> pour développer
 des applications backend avec le framework <b>ASP.NET Core</b>.</p>
-<p>J'ai pour habutide de développer sur <b>Visual Studio</b>. Je possède maintenant une bonne maîtrise de cet IDE
+<p>J'ai pour habitude de développer sur <b>Visual Studio</b>. Je possède maintenant une bonne maîtrise de cet IDE
 et des différents outils qu'il propose pour aider au développement et au débogage.</p>`
                 },
                 {
@@ -106,7 +106,7 @@ Google et les pages de documentation.</p>`
                     content: `
 <p>Signature Mosaïc est une solution d'affichage dynamique sur écrans par le biais de Raspberry PI,
 le tout piloté par un serveur central. Cette application est dotée d'une interface web pour les utilisateurs.</p>
-<p>Ceci est l'un des projets les plus ambitieux sur lesquels j'ai pu travailler. En effet, cette solution
+<p>Ceci est l'un des projets les plus ambitieux sur lesquel j'ai pu travailler. En effet, cette solution
 est composée de plusieurs serveurs et un grand nombre de clients, le tout travaillant en temps réel pour
 afficher le contenu souhaité.</p>`,
                 },
@@ -182,7 +182,7 @@ Grâce à mes années d'études et de pratique dans le domaine de l'informatique
                     title: 'Hobbies et passions',
                     content: `
 <p><b>Plongée sous-marine</b> : J'aime le calme et la beauté des milieux marins, être spectateur de cet autre monde a pour moi quelque chose de relaxant.</p>
-<p><b>Culture japonaise</b> : Je rêve de visiter ce pays et je suis passionné d'animation japonaise pour les messages profonds et les réflexions qu'elle peut susciter.</p>
+<p><b>Culture japonaise</b> : Je rêve de visiter ce pays et je suis passionné d'animation japonaise pour les messages profonds et les réflexions qu'elle peuvent susciter.</p>
 <p><b>Jeux vidéos</b> : Quand je joue, je recherche plus qu'un bon gameplay : une histoire prenante et une direction artistique à couper le souffle.</p>`
                 },
                 {
