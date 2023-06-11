@@ -1,0 +1,45 @@
+<div class="container">
+    <h1>Mes compétences</h1>
+
+    <nz-segmented
+        nzSize="large"
+        [nzOptions]="skillOptions"
+        [(ngModel)]="selectedOption"
+        class="segmented"
+    ></nz-segmented>
+
+    <div nz-row nzJustify="center">
+        <div nz-col nzXs="24" nzSm="24" nzMd="20">
+            <div nz-row nzJustify="start">
+                <ng-container *ngFor="let skill of skills">
+                    <div
+                        *ngIf="skillOptions[selectedOption].value === 'all' || skillOptions[selectedOption].value === skill.type"
+                        nz-col
+                        nzXs="24"
+                        nzSm="24"
+                        nzMd="12"
+                        nzXXl="8"
+                        class="card-container"
+                    >
+                        <nz-card
+                            nzHoverable
+                            style="width: 340px;"
+                            [nzTitle]="skill.name"
+                            
+                            [nzExtra]="cardExtra"
+                            >
+                            <nz-card-meta [nzDescription]="skill.synopsis"></nz-card-meta>
+                            <!-- [nzActions]="[cardExpendAction]" -->
+                        </nz-card>
+                        <ng-template #cardExpendAction>
+                            <span nz-icon nzType="plus" nzTheme="outline"></span>
+                        </ng-template>
+                        <ng-template #cardExtra>
+                            <a>En savoir plus</a>
+                        </ng-template>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
