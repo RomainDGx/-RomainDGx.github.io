@@ -23,7 +23,10 @@ export class SkillsComponent {
   ];
   public selectedOption: number = 0;
 
-  public skills: Array<ISkill & { isOpenDetail: boolean; }> = [];
+  private _skills: Array<ISkill & { isOpenDetail: boolean; }> = [];
+  public get skills(): Array<ISkill & { isOpenDetail: boolean; }> {
+    return this._skills.filter(skill => this.skillOptions[this.selectedOption].value === 'all' || this.skillOptions[this.selectedOption].value === skill.type)
+  }
 
   constructor(
     elRef: ElementRef<HTMLElement>,
@@ -37,6 +40,6 @@ export class SkillsComponent {
                 first(),
                 map(skills => skills.map(skill => ({ ...skill, isOpenDetail: false })))
               )
-              .subscribe(skills => this.skills = skills);
+              .subscribe(skills => this._skills = skills);
   }
 }

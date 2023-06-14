@@ -11,34 +11,49 @@
     <div nz-row nzJustify="center">
         <div nz-col nzXs="24" nzSm="24" nzMd="20">
             <div nz-row nzJustify="start">
-                <ng-container *ngFor="let skill of skills">
-                    <div
-                        *ngIf="skillOptions[selectedOption].value === 'all' || skillOptions[selectedOption].value === skill.type"
-                        nz-col
-                        nzXs="24"
-                        nzSm="24"
-                        nzMd="12"
-                        nzXXl="8"
-                        class="card-container"
+                <div
+                    *ngFor="let skill of skills"
+                    nz-col
+                    nzXs="24"
+                    nzSm="24"
+                    nzMd="12"
+                    nzXXl="8"
+                    class="card-container"
+                >
+                    <nz-card
+                        nzHoverable
+                        style="width: 340px;"
+                        [nzTitle]="skill.name"
+                        (click)="skill.isOpenDetail = true"
+                        [nzExtra]="cardExtra"
                     >
-                        <nz-card
-                            nzHoverable
-                            style="width: 340px;"
-                            [nzTitle]="skill.name"
-                            
-                            [nzExtra]="cardExtra"
-                            >
-                            <nz-card-meta [nzDescription]="skill.synopsis"></nz-card-meta>
-                            <!-- [nzActions]="[cardExpendAction]" -->
-                        </nz-card>
-                        <ng-template #cardExpendAction>
-                            <span nz-icon nzType="plus" nzTheme="outline"></span>
+                        <nz-card-meta [nzDescription]="synopsis"></nz-card-meta>
+                        <ng-template #synopsis>
+                            <div [innerHTML]="skill.synopsis"></div>
                         </ng-template>
-                        <ng-template #cardExtra>
-                            <a>En savoir plus</a>
-                        </ng-template>
-                    </div>
-                </ng-container>
+                    </nz-card>
+                    <ng-template #cardExtra>
+                        <a>En savoir plus</a>
+                    </ng-template>
+
+                    <nz-modal
+                        [(nzVisible)]="skill.isOpenDetail"
+                        nzClassName="skill-modal"
+                        [nzCancelText]="null"
+                        [nzTitle]="skill.name"
+                        (nzOnCancel)="skill.isOpenDetail = false"
+                        [nzOkText]="null"
+                        nzCentered
+                        nzWidth="1000px"
+                        [nzFooter]="null"
+                    >
+                        <ng-container *nzModalContent>
+                            <div class="modal-content">
+                                <div [innerHTML]="skill.detail"></div>
+                            </div>
+                        </ng-container>
+                    </nz-modal>
+                </div>
             </div>
         </div>
     </div>
