@@ -38,7 +38,7 @@
                         nzClassName="project-modal"
                         [nzCancelText]="null"
                         [nzTitle]="modalTitle"
-                        (nzOnOk)="openMoreInforamtions(project)"
+                        (nzOnOk)="openDetails(project)"
                         (nzOnCancel)="project.isOpenModal = false"
                         nzOkText="En savoir plus"
                         nzCentered
@@ -52,10 +52,27 @@
                                 </a>
                             </div>
                         </ng-container>
-                        <ng-template #modalTitle>
-                            <h2>{{ project.name }}</h2>
-                        </ng-template>
                     </nz-modal>
+
+                    <nz-modal
+                        [(nzVisible)]="project.isOpenDetails"
+                        nzClassName="project-modal"
+                        [nzTitle]="modalTitle"
+                        (nzOnCancel)="project.isOpenDetails = false"
+                        nzCentered
+                        nzWidth="1000px"
+                        [nzFooter]="null"
+                    >
+                        <ng-container *nzModalContent>
+                            <div class="modal-content">
+                                <div [innerHTML]="project.details"></div>
+                            </div>
+                        </ng-container>
+                    </nz-modal>
+
+                    <ng-template #modalTitle>
+                        <h2>{{ project.name }}</h2>
+                    </ng-template>
                 </div>
             </div>
         </div>

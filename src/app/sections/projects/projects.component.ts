@@ -5,7 +5,7 @@ import { ScrollService } from 'src/app/services/scroll.service';
 
 type IProjectExtended = IProject & {
   isOpenModal: boolean;
-  isOpenInformations: boolean;
+  isOpenDetails: boolean;
 };
 
 @Component({
@@ -21,10 +21,11 @@ export class ProjectsComponent {
 
     scrollService.registerSection('Mes réalisations', elRef.nativeElement, 'mes-realisations');
 
-    apiService.getProjectsPageData().subscribe(data => this.projects = data.map(i => ({ ...i, isOpenModal: false, isOpenInformations: false })));
+    apiService.getProjectsPageData().subscribe(data => this.projects = data.map(i => ({ ...i, isOpenModal: false, isOpenDetails: false })));
   }
 
-  public openMoreInforamtions(project: IProjectExtended): void {
+  public openDetails(project: IProjectExtended): void {
     project.isOpenModal = false;
+    project.isOpenDetails = true;
   }
 }

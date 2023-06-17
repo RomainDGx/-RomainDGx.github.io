@@ -3,5 +3,6 @@ export interface IProject {
     image: string;
     tags: string[];
     content: string;
+    details: string;
     link?: string;
 };

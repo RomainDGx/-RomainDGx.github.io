@@ -24,7 +24,7 @@ export class LocalApiService extends ApiService {
                     name: 'Expertise en C#/.Net',
                     synopsis: "Lors de ma formation dans le domaine du développement logiciel, j'ai découvert l'environnement .Net et le C#. Je me suis pris d'intérêt pour cette technologie et ai continué d'approfondir ma maîtrise de cette dernière jusqu'à en faire mon outil de travail principal.",
                     detail: `
-<p>Après avoir découvert le C# durant mes études à <a href="https://www.intechinfo.fr/" target="_blank">INTECH</a>, je suis allé faire mon alternance dans l'entreprise <a href="https://www.signature.one/" target="_blank">Signature One</a> qui utilise cette technologie comme base pour développer ses logiciels. J'ai donc pu continuer d'approfondir ma maîtrise du C# dans un contexte professionnel, avec notamment l'apprentissage de l'utilisation de ce denier avec des méthodes d'avantage professionnelles et industrielles.</p>
+<p>Après avoir découvert le <a href="https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/" target="_blank">C#</a> durant mes études à <a href="https://www.intechinfo.fr/" target="_blank">INTECH</a>, je suis allé faire mon alternance dans l'entreprise <a href="https://www.signature.one/" target="_blank">Signature One</a> qui utilise cette technologie comme base pour développer ses logiciels. J'ai donc pu continuer d'approfondir ma maîtrise du C# dans un contexte professionnel, avec notamment l'apprentissage de l'utilisation de ce denier avec des méthodes d'avantage professionnelles et industrielles.</p>
 <p>J'ai eu l'occasion tout au long de ma formation en entreprise de travailler sur des projets ambitieux et demandant de trouver des solutions efficaces et performantes, suivant bien souvent une architecture de client/serveur ayant pour backend un ou plusieurs serveurs ASP.Net Core. C'est notamment le cas pour le projet Mosaïc où j'ai pu travailler et contribuer à la conception du logiciel et son implémentation en C#. Ce fut pour moi une expérience très enrichissante. À l'heure actuelle la solution fonctionne en production et me permet de voir fonctionner dans un contexte concert le travail de conception et de développement que j'y ai apporté.</p>
 <p>À cette heure, je peux constater que j'ai acquis une certaine maîtrise de cette technologie, me permettant de trouver des solutions techniques aux différentes problématiques qui me sont posées, mais aussi de pouvoir analyser un code déjà existant de de trouver les sources de bug et y apporter une solution efficace.</p>
 <p>Je suis pleinement conscient de ne pas parfaitement maîtriser cette technologie, mais c'est en me confrontant à de nouvelles problématiques et en devant concevoir des systèmes toujours plus performants, que je continue à apprendre et m'améliorer.</p>`
@@ -43,7 +43,7 @@ export class LocalApiService extends ApiService {
                 {
                     type: 'hardSkill',
                     name: 'Architecture logicielle',
-                    synopsis: `<p>L'un des domaines que je trouve les plus intéressants du développement informatique est l'architecture logicelle. En effet, cela requiert une bonne analyse du problème afin d'y apporter une solution adaptée. Cela demande aussi d'avoir une bonne expérience et de maîtriser les différents patterns de conception.</p>
+                    synopsis: `<p>L'un des domaines que je trouve les plus intéressants du développement informatique est l'architecture logicielle. En effet, cela requiert une bonne analyse du problème afin d'y apporter une solution adaptée. Cela demande aussi d'avoir une bonne expérience et de maîtriser les différents patterns de conception.</p>
                     <p>Étant très soucieux de la qualité de mon code et recherchant constamment comment m'améliorer, c'est pour moi un challenge permanent.</p>`,
                     detail: `
 <p>Lors de mes débuts en développement, je faisais mes applications de manière très verticales et peu organisée. Plus ces projets devenaient complexes, plus le fonctionnement était compliqué à maintenir et faire évoluer. C'est à partir de ces premières expériences que j'ai commencé à m'intéresser à la meilleure manière d'organiser mon code et son fonctionnement pour le rendre plus agréalble à développer, à faire évoluer et à relire après-coup.</p>
@@ -173,11 +173,17 @@ Google et les pages de documentation.</p>`
                         'Temps réel'
                     ],
                     content: `
-<p>Signature Mosaïc est une solution d'affichage dynamique sur écrans par le biais de Raspberry PI,
+<p>Mosaïc est une solution d'affichage dynamique sur écrans par le biais de Raspberry PI,
 le tout piloté par un serveur central. Cette application est dotée d'une interface web pour les utilisateurs.</p>
 <p>Ceci est l'un des projets les plus ambitieux sur lesquel j'ai pu travailler. En effet, cette solution
 est composée de plusieurs serveurs et un grand nombre de clients, le tout travaillant en temps réel pour
 afficher le contenu souhaité.</p>`,
+                    details: `
+<p>Lorsque je suis rentré en stage dans l'entreprise <a href="https://www.signature.one/" target="_blank">Signature One</a>, on m'a mis sur la solution Mosaïc. Cette solution a été initié par l'équipe de développeur avant mon arrivé. Cela m'a donc demandé un certain travail de prise en main de la base de code et de son fonctionnement. Lorsque l'on arrive dans un nouveau projet, d'autant plus dans un nouveau contexte de travail tel qu'un nouvelle entreprise, il n'est pas facile de comprendre la façon de développer dans cette dernière. Cela est d'autant plus vrai pour moi, qu'à Signature ils travaillent avec des outils et méthodes propres à eux.</p>
+<p>J'ai commencé à ajouter les fonctionnalités que l'on me demandait en me basant sur la façon dont se sont pris les autres développeurs. Ce fut une bonne approche car j'ai pu intégrer leur façon de développer, mieux comprendre comment fonctionne la stack technique de l'entreprise et créer du code homogène avec le reste de la solution.</p>
+<p>Je suis fier de ce que j'ai apporté à ce projet, cela comprend un gros travail de refactoring sur l'API REST et requêtes SQL où j'ai ajouté un sérieux cran de sécurité et ai standardisé la façon dont les données sont récupérés.</p>
+<p>J'ai aussi pu travailler sur un client léger qui aura pour mission de fonctionner sur des Rapsberry. À mon arrivé, ce client était très limité dans son fonctionnement, j'ai donc travaillé sur son articture logiciel. Afin que ce dernier puisse communiquer avec le serveur central de la solution, j'ai mis un place un protocole de communication basé sur des message envoyé via MQTT. Dans le cas où il y aurait des problèmes techniques, j'ai ajouté tout un mécanisme de résilience afin qu'il n'y ai jamais de coupure visible par l'utilisateur.</p>
+`
                 },
                 {
                     name: 'CK Database',
@@ -192,11 +198,12 @@ afficher le contenu souhaité.</p>`,
 <p>Mon entreprise développe un écosystème pour base de données autour d'une philosophie, <b>le package first</b>.
 L'idée étant qu'en ajoutant des packages dans un projet, ces derniers installent tout ce dont
 ils ont besoin pour fonctionner, ainsi cela rend le développment d'applications bien plus rapide.</p>
-<p>Je participe activement au développement de cet écosystème en créant des packages qui viennent rajouter des concepts :
-<a target="_blank" href="https://github.com/signature-opensource/CK-DB-Workspace">CK.DB.Workspace</a>,
-<a target="_blank" href="https://github.com/signature-opensource/CK-DB-User-UserBanned/tree/develop">CK.DB.User.UserBanned</a>,
-<a target="_blank" href="https://github.com/signature-opensource/CK-DB-User-UserBanned/tree/develop">CK.DB.User.Password.Banned</a>,
-CK.DB.WebPage.</p>`
+<p>Ce principe est notamment utilsié pour le projet CK Database, un ORM chargé d'instancier un modèle de base de données. En effet, on y retrouve un ensemble de package qui vont apporter leur concepts à la base de données, par le biais de table, procédures et altération de du modèle de base apporté dans les packages parents.</p>`,
+                    details: `
+<p>En arrivant en stage à <a href="https://www.signature.one/" target="_blank">Signature One</a>, j'ai remarqué une utilisation plutôt singulière du SQL, en me penchant sur le sujet, notamment lors de mes traveaux sur la solution Mosaïc, je me suis rendu compte que leur façon de travailler avec la base de donnée est assez peu commune pour que je ne me sois jamais confronté à cette denrière durant mes études. Ce fut pour moi un réel challenge que de me plonger dans l'utilisation des packages de CK Database. Il m'a fallut poser de nombreuses questions à mes collègues et regarder en détail le base de code qui constitue ce projet.</p>
+<p>À force de persévérence, j'ai fini par suffisament prendre en main ce projet pour me permettre de l'utiliser dans les autres projets de l'entreprise.</p>
+<p>Au cour de mon alternance, on m'a demandé d'ajouter des concepts à ce projet, qui se répercutent sous forme de nouveaux packages. J'ai donc développé les projete suivants : le <a target="_blank" href="https://github.com/signature-opensource/CK-DB-Workspace">CK.DB.Workspace</a>, le <a target="_blank" href="https://github.com/signature-opensource/CK-DB-User-UserBanned/tree/develop">CK.DB.User.UserBanned</a>, le <a target="_blank" href="https://github.com/signature-opensource/CK-DB-User-UserBanned/tree/develop">CK.DB.User.UserPassword.Banned</a>, et encore d'autres projets sur des dépots privés de l'entreprise.</p>
+<p>Lors de mon travail sur le package CK.DB.User.UserPassword.Banned et plus précisément à l'implémentation des tests unitaires, je me suis rendu compte que plusieurs tests ne passaient pas alors que mon implémentation était correcte, j'ai donc pris l'initiative d'analyser le fonctionnement de package duquel dépend celui que j'était en train d'implémenter, le CK.DB.User.UserPassword. Après analyse, je me suis rendu compte d'un bug caché qui n'avait pas été relevé par les autres développeurs. Je me suis donc empréssé de le corriger et de faire une merge request afin que ce dernier soit fixé sur tous les projets de l'entreprise qui utilisent ce package.<br/>J'étais très fier d'avoir trouvé ce bug qui traînait depuis des années et j'étais encore plus fier de constater que mes tests unitaires soient suffisament pertinents pour relever ce problème.</p>`
                 },
                 {
                     name: 'Portfolio',
@@ -211,10 +218,14 @@ CK.DB.WebPage.</p>`
                     content: `
 <p>Ce portfolio est un exemple concret de ce que je suis capable de produire en terme de SPA.
 Je l'ai développé en <b>Angular</b>, avec l'aide de la librairie <b>NG-ZORRO</b>. Le tout hébergé
-via le service <b>GitHub Page</b>.</p>
+via le service <b>GitHub Pages</b>.</p>
 <p>J'ai tenu à le développer de avec des pratiques professionnelles et d'une façon le rendant
 facile à faire évoluer.</p>`,
-                    link: 'https://github.com/RomainDGx/RomainDGx.github.io'
+                    link: 'https://github.com/RomainDGx/RomainDGx.github.io',
+                    details: `
+<p>Ayant été étudiant en cinquième année à <a href="https://www.intechinfo.fr/" target="_blank">INTECH</a>, un travail demandé pour valider mon titre d'expert en ingénierie du logiciel est de produire mon propre portfolio. Ayant l'expérience du développement Web grâce à mes deux années en alternance à <a href="https://www.signature.one/" target="_blank">Signature One</a>, j'ai donc réaliser un portfolio avec les pratiques qui rythme mon quotidien en entreprise.</p>
+<p>J'ai voulu faire un vrai projet qui servira de vitrine sur mes capacités à développer un site Web dynamique, responsive et agréable à utiliser.J'ai donc utilisé le framwork Angular, utile pour la puissance et les patterns de développement qui y sont imlpémentés, tels que l'Injection de Dépendance. La solution la plus simple pour déployer et héberger mon portfolio est l'utilisation des GitHub Pages. Ce fut pour moi l'occasion d'apprendre à m'en servir. À la mise en place de ces dernière.</p>
+<p>Ce qui me rend fier de ce portfolio, c'est la façon suffisament dynamique dont il est conçu. Au je peux rajouter un nouvel article ou encore faire une correction, sans avoir besoin de retoucher tout le code source. Je peux aussi rajouter de nouvelles sections, ces dernières viendaient s'intégrer tel des plig-in sans avoir à modifier la mécanique de navigation.</p>`
                 },
                 {
                     name: 'Bot Sakuya',
@@ -223,6 +234,7 @@ facile à faire évoluer.</p>`,
                         'Node.js',
                         'TypeScript',
                         'Bot Discord',
+                        'Architecture logicielle'
                     ],
                     content: `
 <p>Passionné de programmation, je n'hésite pas à développer pour des projets personnels !</p>
@@ -230,7 +242,11 @@ facile à faire évoluer.</p>`,
 à créer de l'activité sur le serveur Discord de cette dernière.</p>
 <p>J'ai pris plaisir à apprendre comment communiquer avec l'API de Discord et développer une
 application qui serait amusante à utiliser.</p>`,
-                    link: 'https://cloud2.touhou-online.net/Poisson/SakuyaBot'
+                    link: 'https://cloud2.touhou-online.net/Poisson/SakuyaBot',
+                    details: `
+<p>J'ai tenu pour ce projet visant à créer de l'animation de l'amusement pour ses utilisateur, à le développer dans une démarche aussi sérieuse et professionnelle que mes projets en entreprise. En effet, lorsque qu'il s'agit de développer une application, je tiens à ce qu'elle fonctionne au mieux et répondant aux bonnes pratiques que je m'efforce d'utiliser tel qu'une constitution <a href="https://en.wikipedia.org/wiki/SOLID" target="_blank">SOLID</a>, dynamique et facile à faire évoluer.</p>
+<p>Dans le cas d'un tel projet, qui sera notamment utilisé par le biais d'entrées textuelles, je sais que je dois m'attendre à des erreurs, voir des tentative de le faire disfonctionner, c'est pourquoi j'ai tenu à le rendre strict sur l'analyse des entrées.<br/> L'une des fonctionnalités desquelle je suis le plus fier est une utilisation de la <a href="https://en.wikipedia.org/wiki/Levenshtein_distance" target="_blank">Distance de Levenshtein</a>, me permettant de prendre en compte les erreurs de frappe et trouve ce que l'utilisateur voulais dire. Tout ceci dans le but de rendre son utilisation plus agréable.</p>
+<p>Je travail actuellement sur une nouvelle version de ce projet en mettant en place de nouveaux patterns de conception le rendant encore plus facile à faire évoluer. Notamment avec un phylosophie de command qui viendrait s'ajouter au reste de l'application tels des plug-in, donc sans avoir à impacter l'existant pour s'intégrer.<br/>Avec ceci viendront s'ajouter de nouvelles foctionnalités, rendant le bot d'avantage amusant et agréable à utiliser.</p>`
                 }
             ]);
         });
