@@ -1,5 +1,4 @@
 export interface IContactPageData {
-    email: string;
     links: Array<{
         icon: string;
         iconColor: string;

@@ -43,7 +43,7 @@ export class ScrollService {
 
       if (section.nativeElement.offsetTop <= posY + 2) {
         this.currentSection = section;
-        await this._router.navigate(['/'], { fragment: this.currentSection?.nativeElement.id });
+        await this._router.navigate(['/', this.currentSection.nativeElement.id])
         break;
       }
     }

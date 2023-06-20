@@ -5,7 +5,13 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    component: AppComponent,
+    children: [
+      {
+        path: ':section',
+        component: AppComponent
+      }
+    ]
   },
   {
     path: '**',

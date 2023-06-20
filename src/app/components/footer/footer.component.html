@@ -1,6 +1,6 @@
-Copyright © {{ copyrightDate }} Romain Delorme-Glorieux
+Copyright © {{copyright}} {{name}}
 
-<a href="https://github.com/RomainDGx/RomainDGx.github.io" target="_blank">
+<a *ngIf="repository" [href]="repository" target="_blank">
     <span
         nz-icon
         nzType="github"

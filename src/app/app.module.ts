@@ -15,11 +15,11 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { PlatformModule } from '@angular/cdk/platform';
-import { HomeComponent } from './sections/home/home.component';
-import { ExpertiseComponent } from './sections/expertise/expertise.component';
-import { ProjectsComponent } from './sections/projects/projects.component';
-import { AboutComponent } from './sections/about/about.component';
-import { ContactComponent } from './sections/contact/contact.component';
+import { HomeComponent } from './components/home/home.component';
+import { ExpertiseComponent } from './components/expertise/expertise.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
@@ -35,6 +35,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { SkillsComponent } from './components/skills/skills.component';
+import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 
 registerLocaleData(fr);
 
@@ -47,7 +49,8 @@ registerLocaleData(fr);
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,7 @@ registerLocaleData(fr);
     NzImageModule,
     NzTagModule,
     NzModalModule,
+    NzSegmentedModule,
 
     AppRoutingModule
   ],

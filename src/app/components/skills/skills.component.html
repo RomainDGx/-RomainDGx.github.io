@@ -1,0 +1,58 @@
+<div class="container">
+    <h1>Mes compétences</h1>
+
+    <nz-segmented
+        nzSize="large"
+        [nzOptions]="skillOptions"
+        [(ngModel)]="selectedOption"
+        class="segmented"
+    ></nz-segmented>
+
+    <div nz-row nzJustify="center" style="width: 100%;">
+        <div nz-col nzXs="24" nzSm="24" nzMd="20">
+            <div nz-row nzJustify="start">
+                <div
+                    *ngFor="let skill of skills"
+                    nz-col
+                    nzXs="24"
+                    nzSm="24"
+                    nzMd="12"
+                    nzXXl="8"
+                    class="card-container"
+                >
+                    <nz-card
+                        nzHoverable
+                        style="width: 340px;"
+                        [nzTitle]="skill.name"
+                        (click)="skill.isOpenDetail = true"
+                        [nzExtra]="cardExtra"
+                    >
+                        <nz-card-meta [nzDescription]="synopsis"></nz-card-meta>
+                        <ng-template #synopsis>
+                            <div [innerHTML]="skill.synopsis"></div>
+                        </ng-template>
+                    </nz-card>
+
+                    <nz-modal
+                        [(nzVisible)]="skill.isOpenDetail"
+                        nzClassName="skill-modal"
+                        [nzTitle]="skill.name"
+                        (nzOnCancel)="skill.isOpenDetail = false"
+                        nzCentered
+                        nzWidth="1000px"
+                        [nzFooter]="null"
+                    >
+                        <ng-container *nzModalContent>
+                            <div class="modal-content">
+                                <div [innerHTML]="skill.detail"></div>
+                            </div>
+                        </ng-container>
+                    </nz-modal>
+                </div>
+                <ng-template #cardExtra>
+                    <a>En savoir plus</a>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
