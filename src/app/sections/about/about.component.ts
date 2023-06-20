@@ -14,7 +14,7 @@ export class AboutComponent {
 
   constructor(elRef: ElementRef<HTMLElement>, apiService: ApiService, scrollService: ScrollService) {
 
-    apiService.getAboutPageData().subscribe(articles => this.elements = articles);
+    apiService.getData().subscribe(data => this.elements = data.about);
     scrollService.registerSection('À propos', elRef.nativeElement, 'a-propos');
   }
 }
