@@ -8,7 +8,7 @@
         class="segmented"
     ></nz-segmented>
 
-    <div nz-row nzJustify="center">
+    <div nz-row nzJustify="center" style="width: 100%;">
         <div nz-col nzXs="24" nzSm="24" nzMd="20">
             <div nz-row nzJustify="start">
                 <div
@@ -32,9 +32,6 @@
                             <div [innerHTML]="skill.synopsis"></div>
                         </ng-template>
                     </nz-card>
-                    <ng-template #cardExtra>
-                        <a>En savoir plus</a>
-                    </ng-template>
 
                     <nz-modal
                         [(nzVisible)]="skill.isOpenDetail"
@@ -52,6 +49,9 @@
                         </ng-container>
                     </nz-modal>
                 </div>
+                <ng-template #cardExtra>
+                    <a>En savoir plus</a>
+                </ng-template>
             </div>
         </div>
     </div>
