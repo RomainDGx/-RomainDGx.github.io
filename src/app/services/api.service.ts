@@ -16,7 +16,8 @@ export class LocalApiService extends ApiService {
             repository: 'https://github.com/RomainDGx/RomainDGx.github.io',
             creationYear: 2023,
             home: {
-                job: 'Développeur full stack .NET'
+                job: 'Développeur full stack .NET',
+                punchline: "En tant qu'expert en architecture logicielle dans le développement full stack, je suis en mesure de créer des solutions adaptées aux différents besoins."
             },
             skills: [
                 {

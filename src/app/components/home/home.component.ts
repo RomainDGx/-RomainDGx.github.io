@@ -9,6 +9,12 @@ import { ScrollService } from 'src/app/services/scroll.service';
 })
 export class HomeComponent {
 
+    public data = {
+        name: '',
+        job: '',
+        punchline: ''
+    };
+
     public name: string = '';
     public job: string = '';
     public isVisibleTooltip: boolean = false;
@@ -21,10 +27,7 @@ export class HomeComponent {
         scrollService.registerSection('Accueil', elRef.nativeElement, 'accueil');
         addEventListener('scroll', () => this.isVisibleTooltip = false);
 
-        apiService.getData().subscribe(data => {
-            this.name = data.name;
-            this.job = data.home.job;
-        });
+        apiService.getData().subscribe(data => this.data = { ...data.home, name: data.name });
     }
 
     public scrollToNext(): void {

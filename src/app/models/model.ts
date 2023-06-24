@@ -9,7 +9,10 @@ export interface AppData {
     name: string;
     creationYear: number;
     repository?: string;
-    home: { job: string; };
+    home: {
+        job: string;
+        punchline: string;
+    };
     skills: ISkill[];
     projects: IProject[];
     about: IAboutArticle[];
