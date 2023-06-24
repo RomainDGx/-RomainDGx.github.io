@@ -53,7 +53,7 @@ export class LocalApiService extends ApiService {
                 },
                 {
                     type: 'softSkill',
-                    name: 'Communiation',
+                    name: 'Communication',
                     synopsis: `<p>"La communication est la clé qui ouvre toutes les portes du succès. C'est par le partage efficace des idées, des émotions et des connaissances que nous pouvons créer des liens, résoudre des problèmes et construire un avenir meilleur."</p><p>Cette citation montre l'importance qu'à la communication à mes yeux.</p>`,
                     detail: `
 <p>Ce n'est pas parce que je passe mes journées à communiquer avec des machines, que je dois arrêter de communiquer avec mes semblables. Cela peut faire sourire, mais il y a encore trop de personnes qui voient le développeur au travers du stéréotype de l'informaticien isolé dans son coin. Or, ce n'est pas vrai, bien au contraire !</p>
@@ -206,6 +206,39 @@ Grâce à mes années d'études et de pratique dans le domaine de l'informatique
                     }
                 ]
             },
+            path: [
+                {
+                    from: DateTime.fromObject({ year: 2021, month: 9 }),
+                    title: 'Alternance de 2 ans',
+                    location: '<a href="https://www.signature.one/" target="_blank">Signature One</a>',
+                    content: "<Travail>Développement de multiples solutions logicielles interne à l'entreprise.<br/>Ajout de fonctionnalités sur des projets clients et résolution de bugs en production.<br/>(Développement full stack)</p>"
+                },
+                {
+                    from: DateTime.fromObject({ year: 2021, month: 3 }),
+                    to: DateTime.fromObject({ year: 2021, month: 8 }),
+                    title: 'Stage en entreprise',
+                    location: '<a href="https://www.signature.one/" target="_blank">Signature One</a>',
+                    content: "<p>Développement des solutions Code Center et Mosaïc.<br/>(Développement full stack)</p>"
+                },
+                {
+                    at: DateTime.fromObject({ year: 2020, month: 2 }),
+                    title: "Développement d'un émulateur",
+                    location: '<a href="https://www.signature.one/" target="_blank">Signature One</a>',
+                    content: "<p>Développement d'un logiciel en C# pour émuler le comportement de balances, afin de facilier les tests des logiciels de l'entreprise.<br/>(Architecture logicielle et développement d'application lourde)</p>"
+                },
+                {
+                    from: DateTime.fromObject({ year: 2018, month: 9 }),
+                    title: 'Études à INTECH',
+                    location: '<a href="https://www.intechinfo.fr/" target="_blank">INTECH</a> du groupe <a href="https://www.esiea.fr/" target="_blank">ESIEA</a>',
+                    content: '<p>Études suppérieures en BAC+5 en ingénierie du logiciel.</p>'
+                },
+                {
+                    at: DateTime.fromObject({ year: 2018, month: 6 }),
+                    title: 'Baccalauréat scientifique',
+                    location: '<a href="http://www.lycee-vangogh.fr/" target="_blank">Lycée Van Gogh</a>',
+                    content: 'Baccalauréat scientifique avec spécialité informatique et sciences du numérique.'
+                }
+            ],
             expertises: [
                 {
                     icons: [
