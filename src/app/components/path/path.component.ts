@@ -20,11 +20,7 @@ export class PathComponent {
         
         scrollService.registerSection('Mon parcours', elRef.nativeElement, 'mon-parcours');
 
-        apiService.getData().subscribe(data => {
-            this.items = data.path;
-            console.log(this.items);
-            
-        });
+        apiService.getData().subscribe(data => this.items = data.path );
     }
 
     public isDateOnly(item: ITimeLineItem): item is ITimeLineItem & DateOnly {
