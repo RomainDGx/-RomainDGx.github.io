@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>Mon parcours</h1>
+
+    <div nz-row nzJustify="center">
+        <div nz-col nzXs="22" nzSm="20">
+            <nz-timeline nzMode="left">
+                <ng-container *ngFor="let item of items">
+                    <nz-timeline-item
+                        *ngIf="!isNotFinishRange(item); else notFinish"
+                        nzColor="green"
+                        [nzDot]="checkDot"
+                        [nzLabel]="parseDate(item)"
+                    >
+                        <div class="timeline-item-info">
+                            <span class="title"><b>{{item.title}}</b></span>
+                            <span class="location" [innerHTML]="item.location"></span>
+                            <span class="content" [innerHTML]="item.content"></span>
+                        </div>
+                    </nz-timeline-item>
+        
+                    <ng-template #notFinish>
+                        <nz-timeline-item
+                            [nzDot]="clockDot"
+                            nzColor="blue"
+                            [nzLabel]="parseDate(item)"
+                        >
+                            <div class="timeline-item-info">
+                                <span class="title"><b>{{item.title}}</b></span>
+                                <span class="location" [innerHTML]="item.location"></span>
+                                <span class="content" [innerHTML]="item.content"></span>
+                            </div>
+                        </nz-timeline-item>
+                    </ng-template>
+        
+                    <ng-template #clockDot>
+                        <span nz-icon nzType="clock-circle" nzTheme="twotone" style="font-size: 20px;"></span>
+                    </ng-template>
+        
+                    <ng-template #checkDot>
+                        <span nz-icon nzType="check-circle" nzTheme="twotone" style="font-size: 20px;" nzTwotoneColor="#52c41a"></span>
+                    </ng-template>
+        
+                </ng-container>
+            </nz-timeline>
+        </div>
+    </div>
+</div>

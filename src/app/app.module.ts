@@ -37,6 +37,8 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { SkillsComponent } from './components/skills/skills.component';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
+import { PathComponent } from './components/path/path.component';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 
 registerLocaleData(fr);
 
@@ -50,7 +52,8 @@ registerLocaleData(fr);
     ContactComponent,
     FooterComponent,
     LayoutComponent,
-    SkillsComponent
+    SkillsComponent,
+    PathComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ registerLocaleData(fr);
     NzTagModule,
     NzModalModule,
     NzSegmentedModule,
+    NzTimelineModule,
 
     AppRoutingModule
   ],

@@ -33,7 +33,11 @@ const usedIcon = {
         // Project
         'plus'
     ],
-    twotone: []
+    twotone: [
+        // Path
+        'clock-circle',
+        'check-circle'
+    ]
 };
 
 const assetsPath = process.argv[2];

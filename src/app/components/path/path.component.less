@@ -1,0 +1,43 @@
+.container {
+
+    padding-top: 64px;
+
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+
+    .timeline-item-info {
+        display: flex;
+        flex-direction: column;
+        
+        .title {
+            font-size: 20px;
+        }
+
+        .location, .content {
+            font-size: 15px;
+        }
+    }
+}
+
+::ng-deep nz-timeline{
+
+    .ant-timeline-item-head-custom {
+        background: transparent !important;
+    }
+    
+    .ant-timeline-item-tail {
+        border-left-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .ant-timeline-item-label {
+        font-size: 20px;
+        padding-right: 5px;
+    }
+
+    .ant-timeline-item-head {
+        font-size: 27px;
+    }
+}
